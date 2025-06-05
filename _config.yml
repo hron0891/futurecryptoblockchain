@@ -6,15 +6,18 @@ description: >-
 
 url: "https://www.futurecryptoblockchain.xyz"
 
-twitter_username: your_twitter_handle
+twitter_username: ""
+
 minimal_mistakes_skin: default
-search: true
 
 markdown: kramdown
+
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 permalink: /:categories/:title/
 paginate: 5
 paginate_path: /page:num/
+timezone: ""
 
 include:
   - _pages
@@ -23,8 +26,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
+  - jekyll-seo-tag
 
 author:
   name: "CryptoTrade"
@@ -34,9 +36,6 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://www.futurecryptoblockchain.xyz"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "#"
 
 footer:
   links:
