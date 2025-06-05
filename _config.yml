@@ -6,35 +6,26 @@ description: >-
 
 url: "https://www.futurecryptoblockchain.xyz"
 
-# Optional social handle (update if needed)
 twitter_username: your_twitter_handle
-
-# Theme and markdown
-#remote_theme: "mmistakes/minimal-mistakes"
-theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: default
+search: true
+
 markdown: kramdown
 
-# Site structure
 permalink: /:categories/:title/
 paginate: 5
 paginate_path: /page:num/
-timezone: ""
 
-# Included folders
 include:
   - _pages
 
-# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
 
-# Author profile
 author:
   name: "CryptoTrade"
   avatar: "/assets/images/bio-photo.jpg"
@@ -47,14 +38,12 @@ author:
       icon: "fab fa-fw fa-twitter-square"
       url: "#"
 
-# Footer links (only active ones)
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "#"
 
-# Page defaults
 defaults:
   - scope:
       path: ""
@@ -74,7 +63,6 @@ defaults:
       layout: single
       author_profile: true
 
-# Archives
 category_archive:
   type: liquid
   path: /categories/
