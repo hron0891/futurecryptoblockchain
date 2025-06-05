@@ -10,7 +10,8 @@ url: "https://www.futurecryptoblockchain.xyz"
 twitter_username: your_twitter_handle
 
 # Theme and markdown
-remote_theme: "mmistakes/minimal-mistakes"
+#remote_theme: "mmistakes/minimal-mistakes"
+theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: default
 markdown: kramdown
 
