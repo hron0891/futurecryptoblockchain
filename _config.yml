@@ -108,6 +108,7 @@ collections:
 # ---------------------------------------
 include:
   - _pages
+  - _pages/categories
 
 exclude:
   - Gemfile
