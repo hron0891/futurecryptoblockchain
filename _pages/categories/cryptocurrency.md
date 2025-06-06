@@ -1,6 +1,6 @@
 ---
 title: "Cryptocurrency News & Market Trends"
-layout: category
+layout: archive
 permalink: /categories/cryptocurrency/
 taxonomy: category
 category: cryptocurrency
