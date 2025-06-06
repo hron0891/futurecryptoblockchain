@@ -1,8 +1,7 @@
 ---
 title: "Layer 2 Scaling Solutions"
-layout: category
-permalink: /categories/layer-2/
-taxonomy: category
+layout: categories
+permalink: /categories/
 category: layer-2
 description: "Explore Layer 2 networks like Optimism, Arbitrum, and zk-rollups powering faster and cheaper crypto transactions."
 author_profile: false
