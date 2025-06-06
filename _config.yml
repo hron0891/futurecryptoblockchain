@@ -12,8 +12,7 @@ baseurl: ""  # no trailing slash!
 # ---------------------------------------
 # 🎨 Theme and Skin
 # ---------------------------------------
-remottheme: "minima"
-minimal_mistakes_skin: "default"  # other options: "dark", "air", "contrast", "neon"
+remote_theme: "jekyll/minima"
 
 # ---------------------------------------
 # 🛠 Build Settings
