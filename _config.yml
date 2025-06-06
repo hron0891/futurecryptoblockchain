@@ -13,7 +13,7 @@ baseurl: ""  # no trailing slash!
 # 🎨 Theme and Skin
 # ---------------------------------------
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "default"  # "dark", "air", "contrast", "neon"
+minimal_mistakes_skin: "default"  # other options: "dark", "air", "contrast", "neon"
 
 # ---------------------------------------
 # 🛠 Build Settings
@@ -26,7 +26,7 @@ paginate_path: /page:num/
 timezone: "UTC"
 
 # ---------------------------------------
-# 🔌 Plugins
+# 🔌 Plugins (only supported ones)
 # ---------------------------------------
 plugins:
   - jekyll-paginate
@@ -78,6 +78,7 @@ defaults:
       read_time: true
       share: true
       related: true
+      toc: true
 
   - scope:
       path: "_pages"
@@ -97,24 +98,11 @@ tag_archive:
   path: /tags/
 
 # ---------------------------------------
-# 🏷 Categories List (для удобства и настройки)
+# 🏷 Categories List (optional for structure)
 # ---------------------------------------
-categories:
-  - Cryptocurrency
-  - Blockchain
-  - NFTs
-  - DeFi
-  - Layer 2
-  - Real-World Assets
-  - Trading
-  - Wallets
-  - Security
-  - Guides
-  - Mining
-  - Tax Tools
-  - Airdrops
-  - Metaverse
-  - Exchanges
+collections:
+  posts:
+    output: true
 
 # ---------------------------------------
 # 📁 Include / Exclude
