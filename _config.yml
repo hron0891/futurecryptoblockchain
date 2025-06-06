@@ -12,10 +12,8 @@ baseurl: ""  # no trailing slash!
 # ---------------------------------------
 # 🎨 Theme and Skin
 # ---------------------------------------
-theme: jekyll-theme-minima
-remote_theme: null
-plugins: []
-minimal_mistakes_skin: "default"  # можно поменять на "dark", "air", "contrast", "neon", и т.д.
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default"  # "dark", "air", "contrast", "neon"
 
 # ---------------------------------------
 # 🛠 Build Settings
@@ -30,7 +28,7 @@ timezone: "UTC"
 # ---------------------------------------
 # 🔌 Plugins
 # ---------------------------------------
-#plugins:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
