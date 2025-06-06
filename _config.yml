@@ -12,7 +12,7 @@ baseurl: ""  # no trailing slash!
 # ---------------------------------------
 # 🎨 Theme and Skin
 # ---------------------------------------
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+remottheme: "minima"
 minimal_mistakes_skin: "default"  # other options: "dark", "air", "contrast", "neon"
 
 # ---------------------------------------
