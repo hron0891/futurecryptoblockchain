@@ -1,17 +1,24 @@
-# Site Info
-title: Future Crypto & Blockchain
+# ---------------------------------------
+# ⚙️ Site Configuration
+# ---------------------------------------
+title: "Future Crypto & Blockchain"
 title_separator: "|"
 description: >
   Future Crypto & Blockchain explores the evolving world of Web3, DeFi, Layer 2, NFTs, and real-world asset tokenization. Learn from expert crypto analysis, trading insights, and industry innovations that shape the future of decentralized technology.
 locale: "en-US"
 url: "https://www.futurecryptoblockchain.xyz"
-baseurl: ""  # don't add trailing slash
+baseurl: ""  # no trailing slash!
 
-# Theme
-minimal_mistakes_skin: "default"
+# ---------------------------------------
+# 🎨 Theme and Skin
+# ---------------------------------------
 theme: null
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default"  # можно поменять на "dark", "air", "contrast", "neon", и т.д.
 
-# Build Settings
+# ---------------------------------------
+# 🛠 Build Settings
+# ---------------------------------------
 markdown: kramdown
 highlighter: rouge
 permalink: /:categories/:title/
@@ -19,36 +26,38 @@ paginate: 5
 paginate_path: /page:num/
 timezone: "UTC"
 
-# Plugins
+# ---------------------------------------
+# 🔌 Plugins
+# ---------------------------------------
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-gist
   - jekyll-include-cache
+  - jekyll-seo-tag
+  - jekyll-remote-theme
 
-# Archives
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-
-# SEO
+# ---------------------------------------
+# 🔍 SEO + Social
+# ---------------------------------------
 social:
   type: Organization
-  name: Future Crypto & Blockchain
+  name: "Future Crypto & Blockchain"
   links:
     - "https://www.futurecryptoblockchain.xyz"
-twitter:
-  username: crypto_future_xyz
 
-# Author Info
+twitter:
+  username: "crypto_future_xyz"
+  card: "summary_large_image"
+
+# ---------------------------------------
+# 👤 Author Details
+# ---------------------------------------
 author:
   name: "CryptoTrade"
-  bio: "Crypto and blockchain expert sharing insights on DeFi, Web3, and the digital economy."
   avatar: "/assets/images/bio-photo.jpg"
+  bio: "Crypto and blockchain expert sharing insights on DeFi, Web3, and the digital economy."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -57,32 +66,9 @@ author:
       icon: "fab fa-fw fa-twitter-square"
       url: "#"
 
-# Footer
-footer:
-  links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "#"
-
-# Categories
-categories:
-  - Cryptocurrency
-  - Blockchain
-  - NFTs
-  - DeFi
-  - Layer 2
-  - Real-World Assets
-  - Trading
-  - Wallets
-  - Security
-  - Guides
-  - Mining
-  - Tax Tools
-  - Airdrops
-  - Metaverse
-  - Exchanges
-
-# Defaults
+# ---------------------------------------
+# ⏹ Defaults for Posts and Pages
+# ---------------------------------------
 defaults:
   - scope:
       path: ""
@@ -101,20 +87,42 @@ defaults:
       layout: single
       author_profile: true
 
-# Markdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
+# ---------------------------------------
+# 📂 Archives
+# ---------------------------------------
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
 
-# Sass
-sass:
-  sass_dir: _sass
-  style: compressed
+# ---------------------------------------
+# 🏷 Categories List (для удобства и настройки)
+# ---------------------------------------
+categories:
+  - Cryptocurrency
+  - Blockchain
+  - NFTs
+  - DeFi
+  - Layer 2
+  - Real-World Assets
+  - Trading
+  - Wallets
+  - Security
+  - Guides
+  - Mining
+  - Tax Tools
+  - Airdrops
+  - Metaverse
+  - Exchanges
 
-# Exclude files from build
+# ---------------------------------------
+# 📁 Include / Exclude
+# ---------------------------------------
+include:
+  - _pages
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -125,12 +133,23 @@ exclude:
   - test
   - tmp
 
-include:
-  - _pages
-
-# Keep git
 keep_files:
   - .git
 
-encoding: "utf-8"
+# ---------------------------------------
+# 💅 Markdown and Sass
+# ---------------------------------------
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+encoding: "utf-8"
