@@ -1,25 +1,8 @@
 ---
-layout: archive
+layout: default
 ---
 
-{% capture page_title %}
-  {{ page.title | default: page.taxonomy | capitalize }}
-{% endcapture %}
+<h1>{{ page.title | capitalize }}</h1>
+<p>{{ page.description }}</p>
 
-{% if page.description %}
-  <div class="archive-intro">
-    <h1>{{ page_title }}</h1>
-    <p>{{ page.description }}</p>
-  </div>
-{% else %}
-  <header class="page__header">
-    <h1>{{ page_title }}</h1>
-  </header>
-{% endif %}
-
-{{ content }}
-
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include posts-category.html taxonomy=page.taxonomy type=entries_layout %}
-</div>
+{% include posts-category.html category=page.title %}
