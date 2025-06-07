@@ -1,6 +1,5 @@
-# main links
 main:
   - title: "Home"
     url: /
   - title: "Categories"
-    url: /categories/
+    url: /categories-list/
