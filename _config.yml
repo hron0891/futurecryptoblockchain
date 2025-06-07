@@ -122,9 +122,9 @@ compress_html:
     envs: development
 
 collections:
-  pages:
+  categories:
     output: true
-    permalink: /:path/
+    permalink: /categories/:name/
     
 # Defaults for posts
 defaults:
