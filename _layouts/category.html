@@ -2,7 +2,8 @@
 layout: archive
 ---
 
-{% assign posts = site.categories[page.title] %}
+{% assign category_name = page.category | default: page.title | downcase %}
+{% assign posts = site.categories[category_name] | where_exp: "post", "post.hidden != true" %}
 {% for post in posts %}
   {% include archive-single.html %}
 {% endfor %}
