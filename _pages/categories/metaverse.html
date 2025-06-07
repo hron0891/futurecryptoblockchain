@@ -1,0 +1,14 @@
+---
+title: "The Metaverse & Blockchain"
+layout: category
+permalink: /categories/metaverse/
+description: "Dive into blockchain-powered metaverse projects, virtual reality, and digital economies."
+author_profile: false
+---
+
+<ul>
+  {% assign posts_in_category = site.posts | where_exp: "post", "post.categories contains 'metaverse'" %}
+  {% for post in posts_in_category %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}</li>
+  {% endfor %}
+</ul>

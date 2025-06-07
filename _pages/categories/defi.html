@@ -1,0 +1,14 @@
+---
+title: "Decentralized Finance (DeFi)"
+layout: category
+permalink: /categories/defi/
+description: "Explore decentralized finance platforms and protocols that are transforming lending, borrowing, and trading."
+author_profile: false
+---
+
+<ul>
+  {% assign posts_in_category = site.posts | where_exp: "post", "post.categories contains 'defi'" %}
+  {% for post in posts_in_category %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}</li>
+  {% endfor %}
+</ul>

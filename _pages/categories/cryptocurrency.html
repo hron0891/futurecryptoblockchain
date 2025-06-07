@@ -1,0 +1,14 @@
+---
+title: "Cryptocurrency Insights & Trends"
+layout: category
+permalink: /categories/cryptocurrency/
+description: "Stay updated on the latest trends, news, and analysis in the cryptocurrency world—from Bitcoin to emerging altcoins."
+author_profile: false
+---
+
+<ul>
+  {% assign posts_in_category = site.posts | where_exp: "post", "post.categories contains 'cryptocurrency'" %}
+  {% for post in posts_in_category %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}</li>
+  {% endfor %}
+</ul>

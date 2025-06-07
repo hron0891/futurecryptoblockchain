@@ -1,0 +1,14 @@
+---
+title: "Comprehensive Crypto Guides"
+layout: category
+permalink: /categories/guides/
+description: "Step-by-step tutorials and detailed guides to help you navigate the crypto world with confidence."
+author_profile: false
+---
+
+<ul>
+  {% assign posts_in_category = site.posts | where_exp: "post", "post.categories contains 'guides'" %}
+  {% for post in posts_in_category %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}</li>
+  {% endfor %}
+</ul>

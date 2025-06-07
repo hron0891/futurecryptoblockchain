@@ -1,0 +1,14 @@
+---
+title: "Layer 2 Solutions & Scaling"
+layout: category
+permalink: /categories/layer-2/
+description: "Learn about Layer 2 blockchain scaling solutions that improve transaction speed and reduce costs without sacrificing security."
+author_profile: false
+---
+
+<ul>
+  {% assign posts_in_category = site.posts | where_exp: "post", "post.categories contains 'layer-2'" %}
+  {% for post in posts_in_category %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}</li>
+  {% endfor %}
+</ul>

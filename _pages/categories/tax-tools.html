@@ -1,0 +1,14 @@
+---
+title: "Crypto Tax Reporting Tools"
+layout: category
+permalink: /categories/tax-tools/
+description: "Find the best tools and guides for accurate cryptocurrency tax reporting and compliance."
+author_profile: false
+---
+
+<ul>
+  {% assign posts_in_category = site.posts | where_exp: "post", "post.categories contains 'tax-tools'" %}
+  {% for post in posts_in_category %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}</li>
+  {% endfor %}
+</ul>
