@@ -6,26 +6,9 @@
     </strong>
     <span itemprop="keywords">
       {% for category in page.categories %}
-        <a href="{{ '/categories/' | append: category | slugify | append: '/' | absolute_url }}"
+        <a href="{{ '/categories/' | append: category | slugify | append: '/' | relative_url }}"
            class="page__taxonomy-item p-category" rel="tag">
           {{ category }}
-        </a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
-      {% endfor %}
-    </span>
-  </p>
-{% endif %}
-
-{% if page.tags[0] %}
-  <p class="page__taxonomy">
-    <strong>
-      <i class="fas fa-fw fa-tags" aria-hidden="true"></i>
-      {{ site.data.ui-text[site.locale].tags_label | default: "Tags:" }}
-    </strong>
-    <span itemprop="keywords">
-      {% for tag in page.tags %}
-        <a href="{{ '/tags/' | append: tag | slugify | append: '/' | absolute_url }}"
-           class="page__taxonomy-item p-category" rel="tag">
-          {{ tag }}
         </a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
       {% endfor %}
     </span>
