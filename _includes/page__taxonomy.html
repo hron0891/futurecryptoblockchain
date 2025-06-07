@@ -1,19 +1,11 @@
-{% assign category_base = site.category_archive.path | default: '/categories/' %}
-
-{% unless category_base == '/' %}
-  {% if category_base contains '/' %}
-    {% unless category_base contains '/categories/' %}
-      {% assign category_base = category_base | append: '/' %}
-    {% endunless %}
-  {% endif %}
-{% endunless %}
+{% assign category_base = '/categories/' %}
 
 {% if page.categories %}
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories:</strong>
     <span itemprop="keywords">
       {% for cat in page.categories %}
-        <a href="{{ category_base | append: cat | slugify | append: '/' | relative_url }}"
+        <a href="{{ category_base }}{{ cat | slugify }}/"
            class="page__taxonomy-item p-category" rel="tag">{{ cat }}</a>
         {% unless forloop.last %}<span class="sep">, </span>{% endunless %}
       {% endfor %}
