@@ -3,7 +3,8 @@ layout: single
 title: "The Future of Cryptocurrencies and Blockchain"
 date: 2025-05-04 10:00:00 +0000
 description: "Explore how blockchain and cryptocurrencies are transforming finance, healthcare, real estate, and the digital economy through DeFi, NFTs, and CBDCs."
-categories: [blockchain]
+categories:
+  - blockchain
 ---
 
 <div class="post-content">
