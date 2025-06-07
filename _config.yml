@@ -139,6 +139,15 @@ defaults:
       share: true
       related: true
 
+  - scope:
+      path: "_pages/categories"
+    values:
+      breadcrumbs:
+        - title: "Home"
+          url: "/"
+        - title: "Categories"
+          url: "/categories-list/"
+
 # Include/Exclude
 include:
   - .htaccess
