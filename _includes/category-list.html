@@ -6,7 +6,7 @@
     </strong>
     <span itemprop="keywords">
       {% for category in page.categories %}
-        <a href="{{ '/categories/' | append: category | slugify | append: '/' | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ category }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+        <a href="/categories/{{ category | slugify }}/" class="page__taxonomy-item p-category" rel="tag">{{ category }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
       {% endfor %}
     </span>
   </p>
