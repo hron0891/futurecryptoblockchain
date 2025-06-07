@@ -1,34 +1,40 @@
+{% case site.category_archive.type %}
+  {% when "liquid" %}
+    {% assign path_type = "#" %}
+  {% when "jekyll-archives" %}
+    {% assign path_type = nil %}
+{% endcase %}
+
+{% if page.collection != 'posts' %}
+  {% assign path_type = nil %}
+  {% assign crumb_path = '/' %}
+{% else %}
+  {% assign crumb_path = site.category_archive.path %}
+{% endif %}
+
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-    <!-- Home -->
-    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="{{ '/' | relative_url }}" itemprop="item">
-        <span itemprop="name">Home</span>
-      </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <span class="sep">/</span>
+    {% assign crumbs = page.url | split: '/' %}
+    {% assign i = 1 %}
+    {% for crumb in crumbs offset: 1 %}
+      {% if forloop.first %}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ '/' | relative_url }}" itemprop="item"><span itemprop="name">{{ site.data.ui-text[site.locale].breadcrumb_home_label | default: "Home" }}</span></a>
 
-    {% if page.layout == 'category' %}
-      
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" style="color: inherit; text-decoration: none; cursor: default; font-weight: normal;">
-          Categories
-        </span>
-        <meta itemprop="position" content="2" />
-      </li>
-      <span class="sep">/</span>
-      
-      <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        {{ page.title }}
-        <meta itemprop="position" content="3" />
-      </li>
-    {% else %}
-      <!-- Для всех остальных страниц (например, пост) -->
-      <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        {{ page.title }}
-        <meta itemprop="position" content="2" />
-      </li>
-    {% endif %}
+          <meta itemprop="position" content="{{ i }}" />
+        </li>
+        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+      {% endif %}
+      {% if forloop.last %}
+        <li class="current"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</li>
+      {% else %}
+        {% assign i = i | plus: 1 %}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | relative_url }}" itemprop="item"><span itemprop="name">{{ crumb | url_decode | replace: '-', ' ' | capitalize }}</span></a>
+          <meta itemprop="position" content="{{ i }}" />
+        </li>
+        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+      {% endif %}
+    {% endfor %}
   </ol>
 </nav>
