@@ -188,3 +188,8 @@ defaults:
       comments: false
       share: true
       related: true
+
+    collections:
+       pages:
+       output: true
+       permalink: /:path/
