@@ -17,6 +17,8 @@
     {% assign crumbs = page.url | split: '/' %}
     {% assign i = 1 %}
     {% for crumb in crumbs offset: 1 %}
+      {% assign crumb_text = crumb | url_decode | replace: '-', ' ' | capitalize %}
+      {% assign lower_crumb = crumb_text | downcase %}
       {% if forloop.first %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <a href="{{ '/' | relative_url }}" itemprop="item">
@@ -25,35 +27,29 @@
           <meta itemprop="position" content="{{ i }}" />
         </li>
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
-      {% endif %}
-
-      {% assign i = i | plus: 1 %}
-      {% assign crumb_text = crumb | url_decode | replace: '-', ' ' | capitalize %}
-      {% assign crumb_url = crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | relative_url %}
-
-      {% comment %}
-        "categories", "/categories", "categories-list", 
-      {% endcomment %}
-      {% assign lower_crumb = crumb | downcase %}
-      {% if lower_crumb == "categories" or lower_crumb == "categories-list" %}
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <span itemprop="name" style="color: inherit; text-decoration: none; cursor: default;">{{ crumb_text }}</span>
-          <meta itemprop="position" content="{{ i }}" />
-        </li>
-      {% elsif forloop.last %}
-        <li class="current"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</li>
       {% else %}
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ crumb_url }}" itemprop="item">
-            <span itemprop="name">{{ crumb_text }}</span>
-          </a>
-          <meta itemprop="position" content="{{ i }}" />
-        </li>
+        {% assign i = i | plus: 1 %}
+        {% if forloop.last %}
+          <li class="current" {% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</li>
+        {% else %}
+          {% if lower_crumb == "categories" or lower_crumb == "categories list" or lower_crumb == "categories-list" %}
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span itemprop="name" style="color: #0366d6; text-decoration: underline; cursor: default;">
+                {{ crumb_text }}
+              </span>
+              <meta itemprop="position" content="{{ i }}" />
+            </li>
+          {% else %}
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | relative_url }}" itemprop="item">
+                <span itemprop="name">{{ crumb_text }}</span>
+              </a>
+              <meta itemprop="position" content="{{ i }}" />
+            </li>
+          {% endif %}
+          <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+        {% endif %}
       {% endif %}
-
-      {% unless forloop.last %}
-        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
-      {% endunless %}
     {% endfor %}
   </ol>
 </nav>
