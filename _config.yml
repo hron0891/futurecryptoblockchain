@@ -37,7 +37,7 @@ baidu_site_verification  :
 
 # Social
 twitter:
-  username: "yourhandle"
+  username: "cryptoshifting"
 
 og_image: "/assets/images/og-image.png"
 
@@ -45,7 +45,7 @@ social:
   type: "Organization"
   name: "Future Crypto"
   links:
-    - "https://twitter.com/yourhandle"
+    - "https://twitter.com/cryptoshifting"
 
 # Analytics
 analytics:
@@ -65,7 +65,7 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-twitter"
-      url: "https://twitter.com/yourhandle"
+      url: "https://twitter.com/cryptoshifting"
 
 include:
   - .htaccess
