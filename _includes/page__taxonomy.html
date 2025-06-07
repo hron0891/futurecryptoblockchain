@@ -1,7 +1,33 @@
-{% if site.tag_archive.type and page.tags[0] %}
-  {% include tag-list.html %}
+{% assign category_base = site.category_archive.path | default: '/categories/' %}
+{% unless category_base endswith '/' %}
+  {% assign category_base = category_base | append: '/' %}
+{% endunless %}
+
+{% assign tag_base = site.tag_archive.path | default: '/tags/' %}
+{% unless tag_base endswith '/' %}
+  {% assign tag_base = tag_base | append: '/' %}
+{% endunless %}
+
+{% if page.categories %}
+  {% assign categories_sorted = page.categories | sort_natural %}
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].categories_label | default: "Categories:" }} </strong>
+    <span itemprop="keywords">
+      {% for category_word in categories_sorted %}
+        <a href="{{ category_base | append: category_word | slugify | append: '/' | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+      {% endfor %}
+    </span>
+  </p>
 {% endif %}
 
-{% if site.category_archive.type and page.categories[0] %}
-  {% include category-list.html %}
+{% if page.tags %}
+  {% assign tags_sorted = page.tags | sort_natural %}
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].tags_label | default: "Tags:" }} </strong>
+    <span itemprop="keywords">
+      {% for tag_word in tags_sorted %}
+        <a href="{{ tag_base | append: tag_word | slugify | append: '/' | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ tag_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+      {% endfor %}
+    </span>
+  </p>
 {% endif %}
