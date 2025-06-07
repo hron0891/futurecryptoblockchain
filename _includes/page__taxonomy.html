@@ -1,15 +1,15 @@
-{% if site.tag_archive.type and page.tags[0] %}
-  {% include tag-list.html %}
-{% endif %}
-
 {% if page.categories[0] %}
   <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i>
+    <strong>
+      <i class="fas fa-fw fa-folder-open" aria-hidden="true"></i>
       {{ site.data.ui-text[site.locale].categories_label | default: "Categories:" }}
     </strong>
     <span itemprop="keywords">
       {% for category in page.categories %}
-        <a href="{{ '/categories/' | append: category | slugify | append: '/' | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ category }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+        <a href="{{ '/categories/' | append: category | slugify | append: '/' | absolute_url }}"
+           class="page__taxonomy-item p-category" rel="tag">
+          {{ category }}
+        </a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
       {% endfor %}
     </span>
   </p>
