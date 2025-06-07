@@ -1,24 +1,34 @@
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <!-- Home -->
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
       <a href="{{ '/' | relative_url }}" itemprop="item">
-        <span itemprop="name">{{ site.data.ui-text[site.locale].breadcrumb_home_label | default: "Home" }}</span>
+        <span itemprop="name">Home</span>
       </a>
       <meta itemprop="position" content="1" />
     </li>
-    <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+    <span class="sep">/</span>
 
-    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <span itemprop="name" style="color: inherit; text-decoration: none; cursor: default; font-weight: normal;">
-        Categories
-      </span>
-      <meta itemprop="position" content="2" />
-    </li>
-    <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
-
-    <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" {% if page.locale %} lang="{{ page.locale }}"{% endif %}>
-      {{ page.title }}
-      <meta itemprop="position" content="3" />
-    </li>
+    {% if page.layout == 'category' %}
+      
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" style="color: inherit; text-decoration: none; cursor: default; font-weight: normal;">
+          Categories
+        </span>
+        <meta itemprop="position" content="2" />
+      </li>
+      <span class="sep">/</span>
+      
+      <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        {{ page.title }}
+        <meta itemprop="position" content="3" />
+      </li>
+    {% else %}
+      <!-- Для всех остальных страниц (например, пост) -->
+      <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        {{ page.title }}
+        <meta itemprop="position" content="2" />
+      </li>
+    {% endif %}
   </ol>
 </nav>
