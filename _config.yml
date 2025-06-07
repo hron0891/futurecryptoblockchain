@@ -121,6 +121,11 @@ compress_html:
   ignore:
     envs: development
 
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+    
 # Defaults for posts
 defaults:
   - scope:
