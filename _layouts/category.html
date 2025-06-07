@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: archive
 ---
 
-<h1>{{ page.title | capitalize }}</h1>
-<p>{{ page.description }}</p>
-
-{% include posts-category.html category=page.title %}
+{% assign posts = site.categories[page.title] %}
+{% for post in posts %}
+  {% include archive-single.html %}
+{% endfor %}
