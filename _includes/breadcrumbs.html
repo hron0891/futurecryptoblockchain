@@ -9,8 +9,9 @@
 
     {% if page.categories and page.categories[0] %}
       <span class="sep">/</span>
+      {% assign category_url = '/categories/' | append: page.categories[0] | replace: '//', '/' %}
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="{{ '/categories/' | append: page.categories[0] | downcase | relative_url }}" itemprop="item">
+        <a href="{{ category_url | relative_url }}" itemprop="item">
           <span itemprop="name">{{ page.categories[0] | capitalize }}</span>
         </a>
         <meta itemprop="position" content="2" />
