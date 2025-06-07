@@ -2,22 +2,24 @@
 layout: archive
 ---
 
-{%- assign current_category = page.title | downcase -%}
-{%- assign posts_in_category = site.posts | where_exp: "post", "post.categories contains current_category" -%}
+{% capture page_title %}
+  {{ page.title | default: page.taxonomy | capitalize }}
+{% endcapture %}
 
-<header class="page__header">
-  <h1 class="page__title">{{ page.pretty_title | default: page.title }}</h1>
-  {% if page.description %}
-    <p class="page__description">{{ page.description }}</p>
-  {% endif %}
-</header>
+{% if page.description %}
+  <div class="archive-intro">
+    <h1>{{ page_title }}</h1>
+    <p>{{ page.description }}</p>
+  </div>
+{% else %}
+  <header class="page__header">
+    <h1>{{ page_title }}</h1>
+  </header>
+{% endif %}
 
-<div class="entries-list">
-  {% if posts_in_category.size > 0 %}
-    {% for post in posts_in_category %}
-      {% include archive-single.html type="list" %}
-    {% endfor %}
-  {% else %}
-    <p><em>No posts found in this category.</em></p>
-  {% endif %}
+{{ content }}
+
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+  {% include posts-category.html taxonomy=page.taxonomy type=entries_layout %}
 </div>
