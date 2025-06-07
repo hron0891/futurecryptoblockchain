@@ -1,3 +1,7 @@
+---
+layout: archive
+---
+
 {% assign posts = site.categories[page.taxonomy_value] | where_exp: "post", "post.hidden != true" %}
 {% for post in posts %}
   {% include archive-single.html %}
