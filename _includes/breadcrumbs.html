@@ -10,7 +10,7 @@
     {% if page.categories and page.categories[0] %}
       <span class="sep">/</span>
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="{{ '/categories/' | append: page.categories[0] | relative_url }}" itemprop="item">
+        <a href="{{ '/categories/' | append: page.categories[0] | downcase | relative_url }}" itemprop="item">
           <span itemprop="name">{{ page.categories[0] | capitalize }}</span>
         </a>
         <meta itemprop="position" content="2" />
@@ -18,8 +18,9 @@
     {% endif %}
 
     <span class="sep">/</span>
-    <li class="current">
-      {{ page.title }}
+    <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name">{{ page.title }}</span>
+      <meta itemprop="position" content="3" />
     </li>
   </ol>
 </nav>
