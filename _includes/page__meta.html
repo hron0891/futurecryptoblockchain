@@ -32,7 +32,7 @@
       <span class="page__meta-categories">
         <i class="fas fa-fw fa-folder" aria-hidden="true"></i>
         {% for category in document.categories %}
-          <a href="{{ '/categories/' | append: category | slugify | append: '/' | relative_url }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+          <a href="{{ '/' | append: category | slugify | append: '/' | relative_url }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
         {% endfor %}
       </span>
     {% endif %}
