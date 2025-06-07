@@ -2,9 +2,24 @@
 layout: archive
 ---
 
-{{ content }}
-
 {% assign entries_layout = page.entries_layout | default: 'list' %}
+{% assign this_category = page.title | downcase %}
+{% assign filtered_posts = site.posts | where_exp: "post", "post.categories contains this_category" %}
+
+<h1 class="page-title">
+  {% if filtered_posts.size > 0 %}
+    {{ page.title }}
+  {% else %}
+    Invalid or Empty Category
+  {% endif %}
+</h1>
+
 <div class="entries-{{ entries_layout }}">
-  {% include posts-category.html taxonomy=page.taxonomy type=entries_layout %}
+  {% if filtered_posts.size > 0 %}
+    {% for post in filtered_posts %}
+      {% include archive-single.html type=entries_layout %}
+    {% endfor %}
+  {% else %}
+    <p>No posts found in this category.</p>
+  {% endif %}
 </div>
