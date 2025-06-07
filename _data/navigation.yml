@@ -3,4 +3,4 @@ main:
   - title: "Home"
     url: /
   - title: "Categories"
-    url: /all-categories/
+    url: /categories/
