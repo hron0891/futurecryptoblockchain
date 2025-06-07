@@ -1,6 +1,16 @@
-{% for category_word in categories_sorted %}
-  <a href="{{ category_base | append: category_word | slugify | append: '/' | relative_url }}"
-     class="page__taxonomy-item p-category" rel="tag">
-     {{ category_word }}
-  </a>
-{% endfor %}
+{% assign category_base = site.category_archive.path | default: '/categories/' %}
+{% unless category_base endswith '/' %}
+  {% assign category_base = category_base | append: '/' %}
+{% endunless %}
+
+{% if page.categories %}
+  {% assign categories_sorted = page.categories | sort_natural %}
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].categories_label | default: "Categories:" }} </strong>
+    <span itemprop="keywords">
+      {% for category_word in categories_sorted %}
+        <a href="{{ category_base | append: category_word | slugify | append: '/' | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+      {% endfor %}
+    </span>
+  </p>
+{% endif %}
