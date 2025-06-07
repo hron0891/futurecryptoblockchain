@@ -46,7 +46,7 @@ defaults:
       related: true
 
       - scope:
-      path: "_pages/Categories"
+      path: "_pages/categories"
       type: pages
     values:
       layout: category
