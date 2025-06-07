@@ -155,6 +155,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-archives
 
 whitelist:
   - jekyll-paginate
@@ -164,7 +165,7 @@ whitelist:
   - jekyll-include-cache
 
 category_archive:
-  type: liquid
+  type: jekyll-archives
   path: /categories/
 
 tag_archive:
