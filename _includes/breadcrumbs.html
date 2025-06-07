@@ -1,3 +1,6 @@
+{% assign category = page.categories[0] %}
+{% assign category_url = '/categories/' | append: category | replace: '//', '/' %}
+
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -7,12 +10,11 @@
       <meta itemprop="position" content="1" />
     </li>
 
-    {% if page.categories and page.categories[0] %}
+    {% if category %}
       <span class="sep">/</span>
-      {% assign category_url = '/categories/' | append: page.categories[0] | replace: '//', '/' %}
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <a href="{{ category_url | relative_url }}" itemprop="item">
-          <span itemprop="name">{{ page.categories[0] | capitalize }}</span>
+          <span itemprop="name">{{ category | capitalize }}</span>
         </a>
         <meta itemprop="position" content="2" />
       </li>
