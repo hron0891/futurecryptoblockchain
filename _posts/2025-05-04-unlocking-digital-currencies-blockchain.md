@@ -3,8 +3,13 @@ title: "Unlocking the Potential of Digital Currencies and Blockchain Technology"
 date: 2025-05-04 17:30:00 +0000
 categories: blockchain
 description: "Discover how blockchain and cryptocurrencies are revolutionizing global finance through DeFi, CBDCs, NFTs, and industry-wide transformation."
-image: "/assets/images/blockchain-transformation.png"
 ---
+
+<div class="post-content">
+
+  <div class="post-image" style="text-align:center; margin-bottom:1em;">
+    <img src="/assets/images/blockchain-transformation.png" alt="Unlocking the Potential of Digital Currencies and Blockchain Technology" width="400" height="400" />
+  </div>
 
 <h1>How Blockchain and Cryptocurrencies Are Transforming Global Finance</h1>
 
@@ -27,3 +32,4 @@ image: "/assets/images/blockchain-transformation.png"
 
 <h2>Conclusion</h2>
 <p>Blockchain and cryptocurrencies are at the forefront of a digital revolution. With innovations like DeFi, CBDCs, and NFTs, blockchain technology holds the potential to transform industries and democratize financial services. However, addressing regulatory, security, and scalability challenges will be key to unlocking its full potential and driving future adoption.</p>
+</div>
