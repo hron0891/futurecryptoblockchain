@@ -9,12 +9,12 @@ image: "/assets/images/blockchain-transformation.png"
 ---
 
 <div class="post-content">
-
-  <h1>{{ page.title }}</h1>
-
+  
   <div class="post-image" style="text-align:center; margin: 1.5em 0;">
     <img src="{{ page.image }}" alt="Blockchain and Cryptocurrency Transformation" width="400" height="400" />
   </div>
+  
+<h1>{{ page.title }}</h1>
 
   <p>Cryptocurrencies and blockchain technology are reshaping the world of finance and digital assets. By offering decentralization, transparency, and enhanced security, they are creating new opportunities for global financial systems. Let’s explore the key trends driving this digital transformation.</p>
 
