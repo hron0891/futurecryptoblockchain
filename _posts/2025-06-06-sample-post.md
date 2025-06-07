@@ -3,7 +3,7 @@ title: "Sample Post for Cryptocurrency"
 layout: single
 date: 2025-06-06
 author: CryptoTrade
-categories: [airdrops]
+categories: [cryptocurrency]
 excerpt: "A test post to validate category rendering."
 ---
 
