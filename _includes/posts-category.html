@@ -1,4 +1,5 @@
-{% assign posts = site.categories[include.taxonomy] | where_exp: "post", "post.hidden != true" %}
+{% assign category_name = page.title | downcase %}
+{% assign posts = site.categories[category_name] | where_exp: "post", "post.hidden != true" %}
 {%- for post in posts -%}
   {% include archive-single.html %}
 {%- endfor -%}
