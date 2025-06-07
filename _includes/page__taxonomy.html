@@ -1,7 +1,9 @@
-
 {% assign category_base = site.category_archive.path | default: '/categories/' %}
-{% unless category_base endswith '/' %}
-  {% assign category_base = category_base | append: '/' %}
+
+{% unless category_base == '/' %}
+  {% unless category_base contains '/' %}
+    {% assign category_base = category_base | append: '/' %}
+  {% endunless %}
 {% endunless %}
 
 {% if page.categories %}
