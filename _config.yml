@@ -110,7 +110,7 @@ timezone: "UTC"
 # Archives
 category_archive:
   type: jekyll-collection
-  path: _categories
+  path: categories
 tag_archive:
   type: liquid
   path: /tags/
