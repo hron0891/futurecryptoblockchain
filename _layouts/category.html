@@ -2,24 +2,23 @@
 layout: archive
 ---
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-{% assign this_category = page.title | downcase %}
-{% assign filtered_posts = site.posts | where_exp: "post", "post.categories contains this_category" %}
+{%- assign entries_layout = page.entries_layout | default: 'list' -%}
+{%- assign current_category = page.title | downcase -%}
+{%- assign posts_in_category = site.posts | where_exp: "post", "post.categories contains current_category" -%}
 
-<h1 class="page-title">
-  {% if filtered_posts.size > 0 %}
-    {{ page.title }}
-  {% else %}
-    Invalid or Empty Category
+<header class="page__header">
+  <h1 class="page__title">{{ page.pretty_title | default: page.title }}</h1>
+  {% if page.description %}
+    <p class="page__description">{{ page.description }}</p>
   {% endif %}
-</h1>
+</header>
 
 <div class="entries-{{ entries_layout }}">
-  {% if filtered_posts.size > 0 %}
-    {% for post in filtered_posts %}
+  {% if posts_in_category.size > 0 %}
+    {% for post in posts_in_category %}
       {% include archive-single.html type=entries_layout %}
     {% endfor %}
   {% else %}
-    <p>No posts found in this category.</p>
+    <p><em>No posts found in this category.</em></p>
   {% endif %}
 </div>
