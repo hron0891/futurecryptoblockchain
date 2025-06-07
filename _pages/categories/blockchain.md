@@ -8,11 +8,10 @@ description: "Explore the future of blockchain across industries including suppl
 author_profile: false
 ---
 
-{% assign blockchain_posts = site.posts | where_exp: "post", "post.categories contains 'blockchain'" %}
+
 <ul>
-  {% for post in blockchain_posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
+  {% assign posts_in_category = site.posts | where_exp: "post", "post.categories contains 'blockchain'" %}
+  {% for post in posts_in_category %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}</li>
   {% endfor %}
 </ul>
