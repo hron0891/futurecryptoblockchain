@@ -22,10 +22,20 @@ layout: default
   {% include sidebar.html %}
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
-    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+    {% if page.title %}
+      <meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% endif %}
+    {% if page.description %}
+      <meta itemprop="description" content="{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% elsif page.excerpt %}
+      <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% endif %}
+    {% if page.date %}
+      <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">
+    {% endif %}
+    {% if page.last_modified_at %}
+      <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">
+    {% endif %}
 
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
@@ -49,7 +59,9 @@ layout: default
           </aside>
         {% endif %}
         {{ content }}
-        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        {% if page.link %}
+          <div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>
+        {% endif %}
       </section>
 
       <footer class="page__meta">
@@ -75,42 +87,42 @@ layout: default
         </p>
       {% endif %}
     {% endif %}
- <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{{ page.url | absolute_url }}"
-  },
-  "headline": "{{ page.title | escape }}",
-  "description": "{{ page.description | escape }}",
-  "image": {
-    "@type": "ImageObject",
-    "url": "{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.url }}/assets/images/default-og-image.jpg{% endif %}"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "{{ site.author.name | default: 'BlockNomad' }}"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "{{ site.title | escape }}",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ site.url }}/assets/images/logo.png"
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}"
+      },
+      "headline": "{{ page.title | escape }}",
+      "description": "{{ page.description | escape }}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.url }}/assets/images/default-og-image.jpg{% endif %}"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "{{ site.author.name | default: 'BlockNomad' }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.title | escape }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ site.url }}/assets/images/logo.png"
+        }
+      },
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}"
     }
-  },
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}"
-}
-</script>
+    </script>
   </article>
 
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
     {% include page__related.html posts=site.related_posts %}
-  {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
   {% elsif page.id and page.related %}
     {% include page__related.html posts=site.posts %}
   {% endif %}
