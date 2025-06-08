@@ -10,7 +10,7 @@ image: /assets/images/blockchain-transformation.png
 <div class="post-content">
 
   <div class="post-image" style="text-align:center; margin-bottom:1em;">
-    <img src="/assets/images/blockchain-transformation.png" alt="Unlocking the Potential of Digital Currencies and Blockchain Technology" width="400" height="400" />
+    <img src="/assets/images/blockchain-transformation.png" alt="Unlocking the Potential of Digital Currencies and Blockchain Technology" width="1024" style="max-width:100%; height:auto;" />
   </div>
 
 <h1>How Blockchain and Cryptocurrencies Are Transforming Global Finance</h1>
