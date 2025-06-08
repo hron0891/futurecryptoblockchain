@@ -133,7 +133,7 @@ permalink: /:categories/:title/
 timezone: "UTC"
 
 paginate: 7
-paginate_path: "/page/:num/"
+paginate_path: "/page:num/"
 
 # pagination:
 #   debug: false
