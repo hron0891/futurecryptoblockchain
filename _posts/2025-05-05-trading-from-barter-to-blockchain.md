@@ -11,8 +11,6 @@ categories: [trading, blockchain]
   <img src="/assets/images/trading-evolution.png" alt="The Evolution of Trading: From Barter to Blockchain" width="1024" style="max-width:100%; height:auto;" />
 </figure>
 
-<h1>Trading: From Primitive Barter to Digital Strategies</h1>
-
 <p>Long before charts, brokers, or crypto wallets existed, people traded. The idea was simple: give what you have, get what you need. This ancient human instinct didn’t fade—it transformed. What began with exchanging clay pots for grain evolved into today’s sophisticated trading methods, moving at the speed of light across digital networks.</p>
 
 <h2>A Glimpse into the Past</h2>
