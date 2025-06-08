@@ -35,26 +35,3 @@ categories: [blockchain]
   <p>The future of cryptocurrencies and blockchain holds great promise. Innovations like DeFi, CBDCs, and NFTs are just the beginning of a larger transformation. As technology evolves, blockchain will likely become a key driver of decentralization, financial inclusion, and industry transparency.</p>
 
 </div>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Future of Cryptocurrencies and Blockchain",
-  "description": "Explore the transformative potential of cryptocurrencies and blockchain technology shaping the future of finance, governance, and digital assets.",
-  "author": {
-    "@type": "Person",
-    "name": "Future Crypto Blockchain"
-  },
-  "datePublished": "2025-04-10T15:00:00Z",
-  "image": "https://www.futurecryptoblockchain.xyz/assets/images/future-of-cryptocurrencies-blockchain.png",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Future Crypto Blockchain",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.futurecryptoblockchain.xyz/assets/images/logo.png"
-    }
-  }
-}
-</script>
