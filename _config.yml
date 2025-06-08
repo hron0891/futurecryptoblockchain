@@ -158,6 +158,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-archives
+  - jekyll-seo-tag
 
 whitelist:
   - jekyll-paginate
