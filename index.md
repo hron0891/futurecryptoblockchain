@@ -1,5 +1,6 @@
 ---
 layout: home
+paginate: 5
 title: Future Crypto & Blockchain
 ---
 
