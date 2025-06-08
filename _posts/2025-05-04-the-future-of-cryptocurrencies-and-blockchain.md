@@ -10,7 +10,7 @@ categories: [blockchain]
 <div class="post-content">
 
   <div class="post-image" style="text-align:center; margin-bottom:1em;">
-    <img src="/assets/images/how-blockchain-cryptocurrencies-reshaping-future.png" alt="How Blockchain and Cryptocurrencies Are Reshaping the Future" width="400" height="400" />
+    <img src="/assets/images/how-blockchain-cryptocurrencies-reshaping-future.png" alt="How Blockchain and Cryptocurrencies Are Reshaping the Future" width="1024" style="max-width:100%; height:auto;" />
   </div>
 
   <h1>The Future of Cryptocurrencies and Blockchain</h1>
