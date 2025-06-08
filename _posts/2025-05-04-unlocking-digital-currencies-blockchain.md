@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Unlocking the Potential of Digital Currencies and Blockchain Technology"
 date: 2025-05-04 17:30:00 +0000
 categories: blockchain
