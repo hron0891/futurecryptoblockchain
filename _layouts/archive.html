@@ -19,7 +19,14 @@ layout: default
 
   <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
-      <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</h1>
+      <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
+  {% if paginator.page > 1 %}
+    {{ page.title }} – Page {{ paginator.page }}
+  {% else %}
+    {{ page.title }}
+  {% endif %}
+</h1>
+
     {% endunless %}
     {{ content }}
   </div>
