@@ -12,8 +12,6 @@ categories:
   <img src="/assets/images/web3-next-era.png" alt="Web3: The Internet’s Next Evolution Toward Ownership and Freedom" width="1024" style="max-width:100%; height:auto;" />
 </figure>
 
-<h1>Web3: The Internet’s Next Evolution Toward Ownership and Freedom</h1>
-
 <p>The internet is on the verge of a fundamental transformation—one that redefines how users interact with, own, and govern their digital lives. Known as Web3, this next era shifts power away from centralized corporations and toward individuals, through blockchain technology, decentralization, and token-based economies.</p>
 
 <h2>What Is Web3?</h2>
