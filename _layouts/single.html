@@ -84,7 +84,7 @@ layout: default
     "@id": "{{ page.url | absolute_url }}"
   },
   "headline": "{{ page.title | escape }}",
-  "description": "{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | escape }}{% else %}{{ content | strip_html | strip_newlines | truncate: 160 | escape }}{% endif %}",
+  "description": "{{ page.description | escape }}",
   "image": {
     "@type": "ImageObject",
     "url": "{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.url }}/assets/images/default-og-image.jpg{% endif %}"
