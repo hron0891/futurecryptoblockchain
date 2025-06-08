@@ -192,7 +192,7 @@ defaults:
       share: true
       related: true
 
-  collections:
+collections:
     pages:
       output: true
       permalink: /:path/
