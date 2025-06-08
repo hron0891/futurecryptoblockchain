@@ -1,7 +1,6 @@
 ---
 layout: home
 title: Future Crypto & Blockchain
-paginate: 7
 ---
 
 Explore all the latest in DeFi, Web3 and more.
