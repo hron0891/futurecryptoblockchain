@@ -53,12 +53,14 @@ analytics:
 
 # Author (disabled, not shown on site)
 author:
-  name   :
-  avatar :
-  bio    :
-  location:
-  email  :
-  links: []
+  name: "BlockNomad"
+  avatar: "/assets/images/avatar.png"
+  bio: "Crypto blogger and blockchain enthusiast."
+  location: "Global"
+  links:
+    - label: "Twitter"
+      url: "https://twitter.com/cryptoshifting"
+
 
 # Footer with only Twitter
 footer:
