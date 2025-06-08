@@ -11,9 +11,16 @@
 {%- assign page_title = page_title | markdownify | strip_html | strip_newlines | escape_once -%}
 {%- assign seo_title  = seo_title  | markdownify | strip_html | strip_newlines | escape_once -%}
 
-{%- assign canonical_url = page.canonical_url | default: page.url | replace: "/index.html", "/" | absolute_url %}
+{%- assign canonical_url = page.canonical_url | default: page.url | replace: "/index.html", "/" | absolute_url -%}
+
+{% if paginator and paginator.page > 1 %}
+  {%- assign canonical_url = site.url | append: site.paginate_path | replace: ':num', paginator.page | absolute_url -%}
+{% endif %}
 
 {%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
+{%- if paginator and paginator.page > 1 %}
+  {%- assign seo_description = "Page " | append: paginator.page | append: " of " | append: paginator.total_pages | append: ". " | append: seo_description -%}
+{%- endif %}
 {%- if seo_description -%}
   {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | escape_once | strip -%}
 {%- endif -%}
@@ -35,7 +42,13 @@
   {%- assign og_type = "website" -%}
 {%- endif -%}
 
-<title>{{ seo_title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
+<title>
+  {{ seo_title }}
+  {% if paginator and paginator.page > 1 %}
+    {{ title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}
+  {% endif %}
+</title>
+
 <meta name="description" content="{{ seo_description }}">
 
 {% if author.name %}
