@@ -10,7 +10,7 @@ categories:
 ---
 
 <figure style="text-align: center;">
-  <img src="/assets/images/airdrop-featured.png" alt="How Crypto Airdrops Work: A Closer Look at Free Token Drops" width="400" style="max-width:100%; height:auto;" />
+  <img src="/assets/images/airdrop-featured.png" alt="How Crypto Airdrops Work: A Closer Look at Free Token Drops" width="1024" style="max-width:100%; height:auto;" />
 </figure>
 
 <p>In the crypto space, few concepts attract as much curiosity as airdrops. Despite sounding like giveaways, airdrops are far more calculated than they first appear.</p>
