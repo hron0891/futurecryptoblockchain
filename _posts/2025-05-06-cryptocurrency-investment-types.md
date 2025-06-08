@@ -11,8 +11,6 @@ categories: [cryptocurrency, defi]
   <img src="/assets/images/cryptocurrency-investment-types.png" alt="Cryptocurrency Investment Strategies Overview" width="1024" style="max-width:100%; height:auto;" />
 </figure>
 
-<h1>Cryptocurrency Investment Types: Strategies for the Digital Asset Era</h1>
-
 <p>Cryptocurrency is no longer a niche—it’s a legitimate asset class with a growing list of ways to participate. Whether you’re just dipping your toes in or building a diversified digital portfolio, understanding your investment options is key. Let’s break down the most common strategies, from the classic “HODL” to the latest in DeFi and NFTs.</p>
 
 <h2>1. HODLing (Buy and Hold)</h2>
