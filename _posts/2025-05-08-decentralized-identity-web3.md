@@ -13,8 +13,6 @@ categories:
   <img src="/assets/images/decentralized-identity-did-web3.png" alt="Decentralized Identity (DID): A New Dawn for Privacy in Web3" width="1024" style="max-width:100%; height:auto;" />
 </figure>
 
-# Decentralized Identity (DID): A New Dawn for Privacy in Web3
-
 In an age where digital surveillance is often accepted as a trade-off for convenience, the concept of owning one’s digital identity is revolutionary. As Web3 continues to redefine online interaction, **Decentralized Identity (DID)** emerges as one of the most powerful, yet underappreciated, innovations in the blockchain ecosystem.
 
 Unlike traditional identity systems, which are centralized and typically controlled by governments or corporate giants, decentralized identity gives individuals the power to control, share, and verify their credentials — without depending on third-party intermediaries. This technology is poised to shift the paradigm of trust on the internet.
