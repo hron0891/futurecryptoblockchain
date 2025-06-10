@@ -27,5 +27,13 @@
         {% endif %}
       </span>
     {% endif %}
+
+    {% if document.categories %}
+      <span class="page__meta-category">
+        <i class="fas fa-folder-open" aria-hidden="true"></i>
+        Категория: 
+        {{ document.categories[0] }}
+      </span>
+    {% endif %}
   </p>
 {% endif %}
