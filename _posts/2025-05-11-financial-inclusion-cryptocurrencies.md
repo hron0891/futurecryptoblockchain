@@ -22,7 +22,8 @@ Over **1.4 billion adults globally** remain unbanked, according to the World Ban
 
 In countries with unstable currencies, crypto is more than an investment — it’s a survival tool. In **Venezuela**, **Argentina**, and parts of **sub-Saharan Africa**, people turn to crypto to escape hyperinflation, preserve savings, and bypass capital controls. For them, a digital wallet is a lifeline.
 
-Beyond personal finance, crypto is transforming how aid is distributed. **NGOs** are experimenting with blockchain-based systems to send direct assistance to communities in need, reducing administrative costs and ensuring transparency. Projects like [Giveth](https://giveth.io) or [UNICEF's CryptoFund](https://www.unicef.org/innovation/CryptoFund) are reimagining how philanthropy works in the digital age.
+Beyond personal finance, crypto is transforming how aid is distributed. **NGOs** are experimenting with blockchain-based systems to send direct assistance to communities in need, reducing administrative costs and ensuring transparency. Projects like <a href="https://giveth.io" rel="nofollow noopener noreferrer" target="_blank">Giveth</a> or <a href="https://www.unicef.org/innovation/CryptoFund" rel="nofollow noopener noreferrer" target="_blank">UNICEF’s CryptoFund</a> are reimagining how philanthropy works in the digital age.
+
 
 Still, the path isn’t without obstacles. Limited internet access, low digital literacy, and the volatility of crypto assets remain serious challenges. But innovation is racing ahead — second-layer solutions, user-friendly interfaces, and education programs are making blockchain tools more accessible than ever.
 
