@@ -1,51 +1,22 @@
-{% assign teaser = post.header.teaser | default: site.teaser %}
-{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
-{% assign document = post | default: page %}
-
 <div class="{{ include.type | default: 'list' }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
-
-    {% if teaser %}
+    
+    {% if post.header.teaser %}
       <div class="archive__item-teaser">
-        <a href="{{ post.url | relative_url }}">
-          <img src="{{ teaser | relative_url }}" alt="{{ post.title | escape }}" />
-        </a>
+        <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title | escape }}">
       </div>
     {% endif %}
-
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </h2>
-
-    <p class="page__meta" style="display: flex; flex-wrap: wrap; align-items: center; gap: 1em; font-size: 0.9em; color: #777;">
-      {% if document.date %}
-        <span class="page__meta-date">
-          <i class="far fa-calendar-alt" aria-hidden="true"></i>
-          {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
-          <time datetime="{{ document.date | date_to_xmlschema }}">{{ document.date | date: date_format }}</time>
-        </span>
-      {% endif %}
-
-      {% assign words_per_minute = document.words_per_minute | default: site.words_per_minute | default: 200 %}
-      {% assign words = document.content | strip_html | number_of_words %}
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        {% if words < words_per_minute %}
-          less than 1 minute read
-        {% elsif words == words_per_minute %}
-          1 minute read
-        {% else %}
-          {{ words | divided_by: words_per_minute }} minute read
-        {% endif %}
-      </span>
-    </p>
-
-    {% assign description = post.excerpt | default: post.description %}
+    
+    {% include page__meta.html type=include.type %}
+    
+    {% assign description = post.description | default: post.excerpt %}
     {% if description %}
-      <p class="archive__item-excerpt" itemprop="description">
-        {{ description | markdownify | strip_html | truncate: 160 }}
-      </p>
+      <p class="archive__item-excerpt" itemprop="description">{{ description | markdownify | strip_html | truncate: 160 }}</p>
     {% endif %}
-
+    
   </article>
 </div>
