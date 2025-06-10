@@ -1,18 +1,40 @@
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
 <div class="{{ include.type | default: 'list' }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
-    
-    {% if post.header.teaser %}
+
+    {% comment %}
+      Убираем проверку include.type == "grid", чтобы картинка показывалась всегда, если есть teaser
+    {% endcomment %}
+    {% if teaser %}
       <div class="archive__item-teaser">
-        <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title | escape }}">
+        <img src="{{ teaser | relative_url }}" alt="{{ title | escape }}">
       </div>
     {% endif %}
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ title }}</a> 
+        <a href="{{ post.url | relative_url }}" rel="permalink">
+          <i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span>
+        </a>
+      {% else %}
+        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+      {% endif %}
     </h2>
-    
+
     {% include page__meta.html type=include.type %}
-    
+
     {% assign description = post.description | default: post.excerpt %}
     {% if description %}
       <p class="archive__item-excerpt" itemprop="description">{{ description | markdownify | strip_html | truncate: 160 }}</p>
