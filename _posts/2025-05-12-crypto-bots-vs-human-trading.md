@@ -14,6 +14,7 @@ categories:
   <img src="/assets/images/crypto-trading-bots-vs-human-intuition.png" alt="Crypto Trading Bots vs Human Intuition" width="1024" style="max-width:100%; height:auto;" />
 </figure>
 
+<h2>Who Controls the Crypto Market: Trading Bots or Human Instinct?</h2>
 <p>Crypto trading no longer belongs exclusively to analysts or lucky guessers. Today, a large share of operations is done by <strong>automated trading bots</strong>, executing hundreds of trades per hour. But as technology evolves, so does the debate: can algorithms really replace the intuition of a human trader, especially in an unstable and unpredictable environment like the crypto market?</p>
 
 <h2>Automated Trading in Crypto: Pros and Risks</h2>
