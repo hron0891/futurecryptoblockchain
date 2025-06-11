@@ -21,6 +21,9 @@ atom_feed:
   path: feed.xml
   hide: false
 
+sitemap:
+  filename: sitemap.xml
+
 search                   : true
 search_full_content      : true
 search_provider          : lunr
