@@ -121,20 +121,7 @@ layout: default
   </article>
 
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
-  {% if page.id and page.related %}
-  {% assign current_categories = page.categories %}
-  {% assign related = site.posts | where_exp:"post", "post != page" %}
-
-  {% assign filtered_related = "" | split: "" %}
-  {% for post in related %}
-    {% for category in post.categories %}
-      {% if current_categories contains category %}
-        {% assign filtered_related = filtered_related | push: post %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-  {% endfor %}
-
-  {% include page__related.html posts=filtered_related %}
-{% endif %}
+  {% assign primary_category = page.categories[0] %}
+{% assign related = site.posts | where_exp:"post", "post != page" %}
+{% assign filtered_related = related | where_exp: "post", "post.categories[0] == primary_category" %}
 </div>
