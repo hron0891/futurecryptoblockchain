@@ -19,7 +19,7 @@
       {% endif %}
     </h2>
 
-    {% include page__meta.html type=include.type %}
+    {% include page__meta.html type=include.type hide_category=include.hide_category %}
 
     {% assign description = post.description | default: post.excerpt %}
     {% if description %}
