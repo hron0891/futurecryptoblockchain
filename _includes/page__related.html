@@ -1,6 +1,6 @@
 {% assign related_posts = include.posts | where_exp: "post", "post.hidden != true" %}
 {% assign sorted_posts = related_posts | sort: 'date' %}
-{% assign shuffled_posts = sorted_posts | sort: 'content' %} {# псевдослучайная сортировка #}
+{% assign shuffled_posts = sorted_posts | sort: 'content' %}
 
 <div class="page__related">
   {% include before-related.html %}
