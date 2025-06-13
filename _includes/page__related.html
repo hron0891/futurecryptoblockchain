@@ -1,11 +1,15 @@
-{% assign posts = include.posts | where_exp: "post", "post.hidden != true" %}
+{% assign related_posts = include.posts | where_exp: "post", "post.hidden != true" %}
+{% assign shuffled_posts = related_posts | sample: 8 %} {# немного больше, чтобы избежать повторов #}
 <div class="page__related">
   {% include before-related.html %}
   <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
   <div class="grid__wrapper">
-    {% for post in posts limit:4 %}
+    {% assign count = 0 %}
+    {% for post in shuffled_posts %}
       {% if post.id == page.id %}{% continue %}{% endif %}
       {% include archive-single.html type="grid" hide_category=true %}
+      {% assign count = count | plus: 1 %}
+      {% if count == 4 %}{% break %}{% endif %}
     {% endfor %}
   </div>
 </div>
