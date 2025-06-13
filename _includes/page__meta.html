@@ -1,5 +1,7 @@
 {% assign document = post | default: page %}
-{% if document.read_time or document.date %}
+{% assign hide_category = include.hide_category | default: false %}
+
+{% if document.read_time or document.date or (document.categories and hide_category == false) %}
   <p class="page__meta" style="display: flex; flex-wrap: wrap; align-items: center; gap: 1em;">
 
     {% if document.read_time %}
@@ -25,7 +27,7 @@
       </span>
     {% endif %}
 
-    {% if document.categories %}
+    {% if document.categories and hide_category == false %}
       <span class="page__meta-category" style="white-space: nowrap;">
         <i class="fas fa-folder-open" aria-hidden="true"></i>
         {{ document.categories[0] }}
