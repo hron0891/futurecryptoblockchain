@@ -13,8 +13,6 @@ categories:
   <img src="/assets/images/altcoins-to-mine-2025.png" alt="Top 5 Most Profitable Altcoins to Mine in 2025" width="1024" style="max-width:100%; height:auto;" />
 </figure>
 
-<article>
-
 ## Top 5 Most Profitable Altcoins to Mine in 2025
 
 The crypto mining landscape in 2025 is no longer just about Bitcoin. With increasing competition, shifting algorithms, and rising energy costs, miners are turning to altcoins that offer better ROI, lower entry thresholds, and long-term potential. Below are the **Top 5 most profitable altcoins to mine in 2025**, based on network difficulty, market demand, and hardware compatibility.
@@ -62,5 +60,3 @@ A hidden gem in the mining world, **Neoxa** offers something rare: mining integr
 ### Final Thoughts
 
 Mining in 2025 is less about brute power and more about strategic coin selection. With ASIC domination in some algorithms and GPU relevancy fading elsewhere, knowing **what to mine — and with what — is your competitive edge**. These five altcoins balance profitability, sustainability, and long-term use cases, making them the smartest mining picks this year.
-
-</article>
