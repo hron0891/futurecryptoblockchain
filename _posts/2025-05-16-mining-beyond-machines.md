@@ -38,7 +38,7 @@ This is where decentralization meets logistics. It’s not just about who mines.
 
 Digital infrastructure isn’t limited to mining. It includes the frameworks for decentralized storage, computation, and bandwidth. It encompasses the edge devices and hybrid clouds that will connect billions of users to blockchain services without them ever knowing.
 
-And the smartest investors aren’t looking for hype. They’re looking for leverage — in infrastructure. As discussed in [this article](https://www.futurecryptoblockchain.xyz/defi/wallets/crypto-wallets-in-2025/), there’s a whole world of untapped digital infrastructure that’s quietly becoming the most valuable asset in the crypto world.
+And the smartest investors aren’t looking for hype. They’re looking for leverage — in infrastructure. As discussed in [this article](https://www.futurecryptoblockchain.xyz/blockchain/unlocking-digital-currencies-blockchain/), there’s a whole world of untapped digital infrastructure that’s quietly becoming the most valuable asset in the crypto world.
 
 ## The Real Network Is Invisible
 
