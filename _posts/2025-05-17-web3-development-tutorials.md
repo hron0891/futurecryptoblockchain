@@ -39,9 +39,9 @@ So, if you’re a developer — you’ll need a new toolkit.
 
 #### 1. Set Up Your Environment
 
-- Install **Node.js** and **npm**.  
-- Use **Hardhat** or **Foundry** for smart contract dev.  
-- Install **Metamask** for testnet interaction.
+- Install **Node.js** and **npm**  
+- Use **Hardhat** or **Foundry** for smart contract development  
+- Install **Metamask** for testnet interaction
 
 #### 2. Learn Solidity
 
