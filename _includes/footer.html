@@ -7,13 +7,30 @@
     {% if site.footer.links %}
       {% for link in site.footer.links %}
         {% if link.label and link.url %}
-          <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+          <li>
+            <a href="{{ link.url }}"
+               {% assign is_external = false %}
+               {% if link.url contains 'http' %}
+                 {% unless link.url contains site.url %}
+                   {% assign is_external = true %}
+                 {% endunless %}
+               {% endif %}
+               {% if is_external %}
+                 rel="noopener noreferrer"
+               {% endif %}>
+              <i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}
+            </a>
+          </li>
         {% endif %}
       {% endfor %}
     {% endif %}
 
     {% unless site.atom_feed.hide %}
-      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+      <li>
+        <a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}">
+          <i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}
+        </a>
+      </li>
     {% endunless %}
   </ul>
 </div>
@@ -61,7 +78,7 @@
 </script>
 <noscript>
   <div style="position:absolute; left:-9999px;">
-    <img src="https://mc.yandex.ru/watch/102718381" alt="Яндекс.Метрика" rel="nofollow noopener" />
+    <img src="https://mc.yandex.ru/watch/102718381" alt="Яндекс.Метрика" />
   </div>
 </noscript>
 <!--/noindex-->
